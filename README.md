@@ -1,6 +1,6 @@
 # Varnish ESI demo
 
-A demo application test out ESI capabilities of Varnish
+A demo application to test out ESI capabilities of Varnish
 
 
 # Instructions
