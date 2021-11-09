@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./app
+    expose:
+      - 3333
+    ports:
+      - 3333:3333
+  varnish:
+    build: ./varnish
+    depends_on:
+      - app
+    tmpfs: 
+      - /var/lib/varnish:exec
+    environment:
+      - VARNISH_SIZE=2G
+    command: "-p default_ttl=3600"
+    ports:
+      - 80:80
+
